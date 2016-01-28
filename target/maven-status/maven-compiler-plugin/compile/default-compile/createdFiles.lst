@@ -1,0 +1,4 @@
+org\nuxeo\enrichers\PublishDocumentEnricher.class
+org\nuxeo\enrichers\AllowedDocumentTypesContentEnricher.class
+org\nuxeo\enrichers\TagsContentEnricher.class
+org\nuxeo\enrichers\DocumentWorkflowEnricher.class
