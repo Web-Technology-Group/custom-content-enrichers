@@ -9,5 +9,7 @@
 			enable="true" />
 		<register class="org.nuxeo.enrichers.TagsContentEnricher"
 			enable="true" />
+		<register class="org.nuxeo.enrichers.DocumentComments"
+			enable="true" />
 	</extension>
 </component>
