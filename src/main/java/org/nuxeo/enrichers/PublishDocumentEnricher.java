@@ -34,9 +34,6 @@ public class PublishDocumentEnricher extends AbstractJsonEnricher<DocumentModel>
           jg.writeStringField("name", modelList.getName());
           jg.writeStringField("title", modelList.getTitle());
           jg.writeStringField("type", modelList.getType());
-          jg.writeStringField("versionLabel", modelList.getVersionLabel());
-          jg.writeStringField("major:version", modelList.getPropertyValue("uid:major_version").toString());
-          jg.writeStringField("minor:version", modelList.getPropertyValue("uid:minor_version").toString());
           jg.writeEndObject();
       }
       jg.writeEndArray();
