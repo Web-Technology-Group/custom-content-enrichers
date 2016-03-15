@@ -11,7 +11,5 @@
 			enable="true" />
 		<register class="org.nuxeo.enrichers.DocumentWorkflowEnricher"
 			enable="true" />
-		<register class="org.nuxeo.enrichers.DocumentSchemas"
-			enable="true" />
 	</extension>
 </component>
