@@ -1,3 +1,4 @@
+org\nuxeo\enrichers\DocumentSchemas.class
 org\nuxeo\enrichers\DocumentWorkflowEnricher.class
 org\nuxeo\enrichers\DocumentComments.class
 org\nuxeo\enrichers\PublishDocumentEnricher.class
