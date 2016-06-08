@@ -4,21 +4,20 @@ import static org.nuxeo.ecm.core.io.registry.reflect.Instantiations.SINGLETON;
 import static org.nuxeo.ecm.core.io.registry.reflect.Priorities.REFERENCE;
 
 import java.io.IOException;
-import java.util.List;
 import java.io.Serializable;
+import java.util.List;
 import java.util.Map.Entry;
-import javax.servlet.http.HttpServletRequest;
 
 import org.codehaus.jackson.JsonGenerator;
 import org.nuxeo.ecm.core.api.DocumentModel;
-import org.nuxeo.ecm.platform.routing.api.DocumentRoute;
-import org.nuxeo.ecm.platform.routing.api.DocumentRoutingService;
 import org.nuxeo.ecm.core.io.marshallers.json.enrichers.AbstractJsonEnricher;
 import org.nuxeo.ecm.core.io.registry.reflect.Setup;
-import org.nuxeo.runtime.api.Framework;
+import org.nuxeo.ecm.platform.routing.api.DocumentRoute;
+import org.nuxeo.ecm.platform.routing.api.DocumentRoutingService;
 import org.nuxeo.ecm.platform.routing.core.impl.GraphRoute;
-import org.nuxeo.ecm.restapi.server.jaxrs.routing.io.util.JsonEncodeDecodeUtils;
+import org.nuxeo.ecm.platform.routing.core.io.JsonEncodeDecodeUtils;
 import org.nuxeo.ecm.webengine.jaxrs.coreiodelegate.RenderingContextWebUtils;
+import org.nuxeo.runtime.api.Framework;
 
 @Setup(mode = SINGLETON, priority = REFERENCE)
 public class DocumentWorkflowEnricher extends AbstractJsonEnricher<DocumentModel> {
