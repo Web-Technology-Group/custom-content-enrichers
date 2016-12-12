@@ -13,6 +13,8 @@
 			enable="true" />
 		<register class="org.nuxeo.enrichers.RelationDocumentsContentEnricher"
 			enable="true" />
+		<register class="org.nuxeo.enrichers.LatestNewsDocumentEnricher"
+			enable="true" />
 		
 	</extension>
 </component>

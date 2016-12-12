@@ -113,4 +113,21 @@ public class UnitTest {
 		String expected = tc.modifyStringForLinks(testString);
 		assertEquals(expected, actual);
 	}
+	
+	@Test
+	public void testNewPaths() {
+		String actual = "";
+		String nullTest = null;
+		String path = "/default-domain/sections/TeesEsk/About/Trust News";
+		//assertEquals(actual, TestClass.newBreadCrumbPath(actual));
+		//assertEquals(actual, TestClass.newBreadCrumbPath(nullTest));
+		assertEquals("Trust-News", TestClass.newBreadCrumbPath(path));
+	}
+	
+	@Test
+	public void testInt() {
+		String test = "/default-domain/sections/TeesEsk/About/Trust News";
+		assertEquals(38, TestClass.getLastOfUs(test));
+	}
+
 }

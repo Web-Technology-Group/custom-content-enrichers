@@ -16,6 +16,31 @@
 	<description>
     </description>
 
+	<repositories>
+		<!-- Hotfix Repositories -->
+		<repository>
+			<id>hotfix-releases</id>
+			<url>https://maven-us.nuxeo.org/nexus/content/repositories/hotfix-releases</url>
+			<releases>
+				<enabled>true</enabled>
+			</releases>
+			<snapshots>
+				<enabled>false</enabled>
+			</snapshots>
+		</repository>
+		<repository>
+			<id>hotfix-snapshots</id>
+			<url>https://maven-us.nuxeo.org/nexus/content/repositories/hotfix-snapshots</url>
+			<releases>
+				<enabled>false</enabled>
+			</releases>
+			<snapshots>
+				<updatePolicy>always</updatePolicy>
+				<enabled>true</enabled>
+			</snapshots>
+		</repository>
+	</repositories>
+
 	<dependencies>
 		<dependency>
 			<groupId>org.nuxeo.common</groupId>
@@ -60,10 +85,12 @@
 		<dependency>
 			<groupId>org.nuxeo.ecm.routing</groupId>
 			<artifactId>nuxeo-routing-core</artifactId>
+			<version>7.10-HF06</version>
 		</dependency>
 		<dependency>
 			<groupId>org.nuxeo.ecm.routing</groupId>
 			<artifactId>nuxeo-routing-rest-api</artifactId>
+			<version>7.10-HF06</version>
 		</dependency>
 		<dependency>
 			<groupId>javax.servlet</groupId>
@@ -89,8 +116,8 @@
 		<dependency>
 			<groupId>org.nuxeo.ecm.routing</groupId>
 			<artifactId>nuxeo-routing-api</artifactId>
-			<version>8.2</version>
+			<version>7.10-HF06</version>
 		</dependency>
-		
+
 	</dependencies>
 </project>

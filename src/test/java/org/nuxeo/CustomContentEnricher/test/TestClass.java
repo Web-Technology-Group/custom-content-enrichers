@@ -6,6 +6,7 @@ import java.util.Collections;
 import java.util.Comparator;
 import java.util.Date;
 import java.util.List;
+
 /**
  * A class to test ideas.
  * 
@@ -13,16 +14,15 @@ import java.util.List;
  *
  */
 public class TestClass {
-	
+
 	enum TestEnum {
-		ENUM_ONE,
-		ENUM_TWO,
-		ENUM_THREE
+		ENUM_ONE, ENUM_TWO, ENUM_THREE
 	}
-	
+
 	class TestThis {
-		
+
 	}
+
 	private Date lastModified;
 
 	public Date getLastModified() {
@@ -32,7 +32,7 @@ public class TestClass {
 	public void setLastModified(Date lastModified) {
 		this.lastModified = lastModified;
 	}
-	
+
 	private List<String> _hospitalName; // Initialize all this stuff
 
 	public List<String> getHospitalName() {
@@ -44,9 +44,9 @@ public class TestClass {
 	}
 
 	public int getStringPos(String hospitalName) {
-	  return _hospitalName.indexOf(hospitalName);
+		return _hospitalName.indexOf(hospitalName);
 	}
-	
+
 	public static TestClass latestNews(List<TestClass> documentList) {
 		Comparator<TestClass> byDate = new Comparator<TestClass>() {
 			@Override
@@ -62,51 +62,64 @@ public class TestClass {
 		Collections.sort(documentList, byDate);
 		return documentList.get(0);
 	}
-	
+
 	public String splitItems(String contents) {
 		String outcome = "";
 		String[] splitContents = contents.split("/");
-		for(String output : splitContents) {
+		for (String output : splitContents) {
 			outcome = output.substring(output.lastIndexOf("/") + 1, output.length());
 		}
 		return outcome;
 	}
-	
+
 	public String returnLastIndex(String words) {
 		String[] stringArray = words.split("/");
 		return stringArray[stringArray.length - 1];
 	}
-	
+
 	public Class<?> retrieveClass(String className) throws ClassNotFoundException {
 		Class<?> classes = Class.forName(className);
 		return classes;
 	}
-	
+
 	public boolean returnTypeOf(Object object) {
-		if(object instanceof Object) {
+		if (object instanceof Object) {
 			return true;
 		}
 		return false;
 	}
-	
-	public Enum<?> returnPropertyType(String className, String propertyName, String innerClassName) throws ClassNotFoundException, NoSuchFieldException, SecurityException, IllegalArgumentException, IllegalAccessException {
+
+	public Enum<?> returnPropertyType(String className, String propertyName, String innerClassName)
+			throws ClassNotFoundException, NoSuchFieldException, SecurityException, IllegalArgumentException,
+			IllegalAccessException {
 		Class<?> classes = Class.forName(className);
 		List<Class<?>> listOfClasses = Arrays.asList(classes.getDeclaredClasses());
-		for(Class classResult : listOfClasses) {
-			if(classResult.getCanonicalName().equals(innerClassName)) {
+		for (Class classResult : listOfClasses) {
+			if (classResult.getCanonicalName().equals(innerClassName)) {
 				Enum<?> returnEnum = Enum.valueOf(classResult, propertyName);
 				return returnEnum;
 			}
 		}
 		return null;
 	}
-	
+
 	public String modifyStringForLinks(String modifyString) {
-		if (modifyString == null || modifyString.length() == 0 )return "";
+		if (modifyString == null || modifyString.length() == 0)
+			return "";
 		String[] modifiedString = modifyString.split("/");
 		String firstIndex = modifiedString[0].replaceAll(" ", "-").toLowerCase() + "/";
 		return firstIndex;
 	}
+
+	public static String newBreadCrumbPath(String path) {
+		if(path == null || path == "") return "";
+		String newString = path.substring((path.lastIndexOf('/') + 1), path.length()).replace(" ", "-");
+		return newString;
+	}
 	
-	
+	public static int getLastOfUs(String value) {
+		int position = value.lastIndexOf('/');
+		return position;
+	}
+
 }
