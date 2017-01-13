@@ -25,8 +25,8 @@ public class LatestNewsDocumentEnricher extends AbstractJsonEnricher<DocumentMod
 
 	public static final String NAME = "getLatestNews";
 
-	public LatestNewsDocumentEnricher(String name) {
-		super(name);
+	public LatestNewsDocumentEnricher() {
+		super(NAME);
 	}
 
 	@Override
@@ -41,8 +41,7 @@ public class LatestNewsDocumentEnricher extends AbstractJsonEnricher<DocumentMod
 				.append(" " + Operator.AND.toString() + " ").append("nhstrust:articledate").append(Operator.GTEQ.toString())
 				.append(new DateWrapper().days(-30).toString()).append(" " + Operator.AND.toString() + " ")
 				.append(NXQL.ECM_LIFECYCLESTATE).append(Operator.NOTEQ.toString())
-				.append(NXQL.escapeString(LifeCycleConstants.DELETED_STATE)).append(" " + Operator.AND.toString() + " ")
-				.append(NXQL.ECM_ISCHECKEDIN).append(Operator.EQ.toString() + "0");
+				.append(NXQL.escapeString(LifeCycleConstants.DELETED_STATE));
 		List<DocumentModel> docs = session.query(query.toString());
 		if (log.isDebugEnabled()) {
 			log.debug("<getChildren> query: " + query.toString() + ", " + docs);
